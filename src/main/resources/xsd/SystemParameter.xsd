@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema version="1.1.0" attributeFormDefault="unqualified"
+		   elementFormDefault="unqualified"
+		   xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
+		   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		   jxb:version="2.0">
+
+	<xs:element name ="SystemParameters">
+		<xs:complexType>
+			<xs:sequence maxOccurs="unbounded">
+				<xs:element ref="SystemParameter" minOccurs="1" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="SystemParameter">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Category" type="CategoryType" />  
+				<xs:element name="SubCategory" type="SubCategoryType" />
+				<xs:element name="Name" type="NameType" />
+				<xs:element name="Value" type="xs:string" />
+				<xs:element name="Type" type="TypeType" />
+				<xs:element name="Cache" type="CacheType" />
+				<xs:element name="Comment" type="CommentType" />
+				<xs:element name="LongValue" type="xs:string" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:simpleType name="CategoryType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="4" />
+			<xs:maxLength value="20" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="SubCategoryType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="4" />
+			<xs:maxLength value="20" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="NameType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="4" />
+			<xs:maxLength value="100" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="TypeType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="STRING" />
+			<xs:enumeration value="BOOLEAN" />
+			<xs:enumeration value="INTEGER" />
+			<xs:enumeration value="LONG" />
+			<xs:enumeration value="DATETIME" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="CacheType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="NEVER" />
+			<xs:enumeration value="15MINS" />
+			<xs:enumeration value="HOURLY" />
+			<xs:enumeration value="DAILY" />
+			<xs:enumeration value="FOREVER" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="CommentType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="0" />
+			<xs:maxLength value="200" />
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

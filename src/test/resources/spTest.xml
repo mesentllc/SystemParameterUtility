@@ -1,0 +1,29 @@
+<SystemParameters>
+	<SystemParameter>
+		<Category>GLOBAL</Category>
+		<SubCategory>SYSTEM</SubCategory>
+		<Name>Service.AutoGroup.Switch</Name>
+		<Value>true</Value>
+		<Type>BOOLEAN</Type>
+		<Cache>NONE</Cache>
+		<Comment>Autogroup toggle (system-controlled) to turn on/off the autogrouping process.</Comment>
+	</SystemParameter>
+	<SystemParameter>
+		<Category>GLOBAL</Category>
+		<SubCategory>SYSTEM</SubCategory>
+		<Name>Service.AutoGroup.User.Switch</Name>
+		<Value>true</Value>
+		<Type>BOOLEAN</Type>
+		<Cache>NONE</Cache>
+		<Comment>Autogroup toggle available for the user to turn on/off the autogrouping process.</Comment>
+	</SystemParameter>
+	<SystemParameter>
+		<Category>AGGREGATOR-6439</Category>
+		<SubCategory>SCHEDULE</SubCategory>
+		<Name>cronReturnsEventProcessor</Name>
+		<Value>0 0/1 * * * ?</Value>
+		<Type>STRING</Type>
+		<Cache>NONE</Cache>
+		<Comment>CRON style schedule string for Return Event Processing</Comment>
+	</SystemParameter>
+</SystemParameters>
